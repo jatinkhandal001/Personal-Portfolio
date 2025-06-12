@@ -420,33 +420,6 @@
       });
     });
 
-    // 3. Highlight current section in nav (create nav dynamically)
-    const sections = document.querySelectorAll('.section'); // Fixed selector to match .section class
-    const nav = document.createElement('nav');
-    nav.style.position = 'fixed';
-    nav.style.top = '100px';
-    nav.style.right = '30px';
-    nav.style.background = 'rgba(0,0,0,0.3)';
-    nav.style.borderRadius = '8px';
-    nav.style.padding = '10px';
-    nav.style.zIndex = '1001';
-    nav.style.fontWeight = '700';
-    nav.style.fontSize = '0.9rem';
-    nav.style.color = '#00f7ff';
-
-    sections.forEach(section => {
-      const h2 = section.querySelector('h2');
-      if (!h2) return;
-      const link = document.createElement('a');
-      link.textContent = h2.textContent;
-      link.href = `#${section.id}`;
-      link.style.display = 'block';
-      link.style.marginBottom = '8px';
-      link.style.color = 'inherit';
-      link.style.textDecoration = 'none';
-      nav.appendChild(link);
-    });
-    document.body.appendChild(nav);
 
     // Highlight current section link on scroll
     window.addEventListener('scroll', () => {
