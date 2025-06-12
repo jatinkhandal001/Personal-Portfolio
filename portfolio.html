@@ -20,8 +20,6 @@
   <meta property="og:title" content="Jatin Khandal | AI Developer" />
   <meta property="og:description" content="Explore the portfolio of Jatin Khandal - AI Developer & Tech Explorer creating intelligent systems with cutting-edge technologies." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://jatinkhandal.vercel.app/" />
-  <meta property="og:image" content="https://jatinkhandal.vercel.app/og-image.jpg" />
   <meta property="og:site_name" content="Jatin Khandal Portfolio" />
   <meta property="og:locale" content="en_IN" />
   <meta property="og:image:alt" content="Portfolio Preview - Jatin Khandal" />
@@ -67,11 +65,10 @@
       background: linear-gradient(90deg, #00f7ff, #8f00ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text; /* <-- Also add this for non-WebKit support */
-      color: transparent;     /* <-- Add as fallback */
+      background-clip: text;
+      color: transparent;
       margin-bottom: 10px;
     }
-
 
     .subheading {
       font-size: 1.2em;
@@ -243,9 +240,27 @@
     }
 
     html {
-  scroll-behavior: smooth;
-}
+      scroll-behavior: smooth;
+    }
 
+    /* Fixed: Light mode selector targets the right elements */
+    body.light-mode {
+      background: #f0f0f0 !important;
+      color: #042a2b !important;
+    }
+    body.light-mode a {
+      color: #0077cc !important;
+    }
+    body.light-mode .skills-grid .skill-card {
+      background: #0077cc !important;
+      color: white !important;
+      border-color: #0077cc !important;
+    }
+    body.light-mode .projects .project-card {
+      background: #d0f0ff !important;
+      box-shadow: 0 2px 10px #a0d0ff !important;
+      color: #042a2b !important;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -282,7 +297,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="https://drive.google.com/your-resume-link" target="_blank" rel="noopener noreferrer">Resume</a>
+        <a href="https://drive.google.com/your-actual-resume-link" target="_blank" rel="noopener noreferrer">Resume</a>
       </nav>
     </header>
 
@@ -345,13 +360,12 @@
         Developed an AI-based Virtual Mouse using real-time hand gesture recognition powered by OpenCV and CVZone. Enabled cursor control, click, and drag functionalities without physical contact, enhancing accessibility and human-computer interaction.
        </p>
        <p class="tech-stack"><strong>Tech Stack:</strong> Python, OpenCV, CVZone, MediaPipe</p>
-       <a class="working" >Use index finger , ring finger and thumb to perform mouse effect </a>
+       <span>Use index finger, ring finger and thumb to perform mouse effect</span>
        <a class="button" href="https://github.com/jatinkhandal001/Virtual-mouse/blob/main/Virtual-Mouse.pdf">Project PPT</a>
        <a class="button" href="https://github.com/jatinkhandal001/Virtual-mouse/blob/f9a305831430e6b48ce24e741b005d12fc506ee5/virtual_mouse.py">GitHub Repo</a>
       </div>
 
-
-    <div class="project-card">
+      <div class="project-card">
         <h3 style="color:#00f7ff;">Blind Assistant <span class="project-origin">• Under Progress</span></h3>
         <p>
           An assistive AI tool for visually impaired users. Combines camera input, Surface Detection , Face Recognition , object detection, and text-to-speech (TTS) to provide real-time situational awareness.
@@ -361,18 +375,18 @@
         <a class="button" href="#">Project PPT</a>
         <a class="button" href="#">GitHub Repo</a>
       </div>
-      </div>
+    </div> <!-- projects section properly closed -->
+
     <div id="contact" class="section contact">
-  <h2>📬 Contact</h2>
-  <p style="margin-bottom: 15px;">Let's connect! Reach out to me through any of the platforms below:</p>
+      <h2>📬 Contact</h2>
+      <p style="margin-bottom: 15px;">Let's connect! Reach out to me through any of the platforms below:</p>
 
-  <a class="button" href="mailto:khandaljatin2187@gmail.com" target="_blank" rel="noopener noreferrer">📧 Email Me</a>
-  <a class="button" href="https://linkedin.com/in/jatinkhandal001" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
-  <a class="button" href="https://peerlist.io/jatinkhandal001" target="_blank" rel="noopener noreferrer">💼 Peerlist</a>
-  <a class="button" href="https://instagram.com/jatinkhandal001" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-  <a class="button" href="https://github.com/jatinkhandal001" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-</div>
-
+      <a class="button" href="mailto:khandaljatin2187@gmail.com" target="_blank" rel="noopener noreferrer">📧 Email Me</a>
+      <a class="button" href="https://linkedin.com/in/jatinkhandal001" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a>
+      <a class="button" href="https://peerlist.io/jatinkhandal001" target="_blank" rel="noopener noreferrer">💼 Peerlist</a>
+      <a class="button" href="https://instagram.com/jatinkhandal001" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+      <a class="button" href="https://github.com/jatinkhandal001" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+    </div>
 
     <footer>
       <p>© 2025 Jatin Khandal. All rights reserved.</p>
@@ -380,120 +394,84 @@
   </div>
 
   <!-- Dark Mode Toggle Button -->
-<button id="darkModeToggle" title="Toggle Dark Mode" style="position: fixed; top: 30px; right: 30px; background:#00f7ff; border:none; padding:10px 14px; border-radius: 20px; color:#042a2b; font-weight:700; cursor:pointer; z-index:1001;">
-  Dark Mode
-</button>
+  <button id="darkModeToggle" title="Toggle Dark Mode" style="position: fixed; top: 30px; right: 30px; background:#00f7ff; border:none; padding:10px 14px; border-radius: 20px; color:#042a2b; font-weight:700; cursor:pointer; z-index:1001;">
+    Dark Mode
+  </button>
 
-<script>
-  // 1. Dark mode toggle
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
-      darkModeToggle.textContent = 'Dark Mode';
-    } else {
-      darkModeToggle.textContent = 'Light Mode';
-    }
-  });
-
-  // Add light mode styles dynamically (override your dark bg)
-  const lightModeStyles = `
-    body.light-mode {
-      background: #f0f0f0 !important;
-      color: #042a2b !important;
-    }
-    body.light-mode a {
-      color: #0077cc !important;
-    }
-    body.light-mode #skills li {
-      background: #0077cc !important;
-      color: white !important;
-    }
-    body.light-mode #projects .project-card {
-      background: #d0f0ff !important;
-      box-shadow: 0 2px 10px #a0d0ff !important;
-      color: #042a2b !important;
-    }
-    body.light-mode #backToTop {
-      background-color: #0077cc !important;
-      color: white !important;
-    }
-    body.light-mode #backToTop:hover {
-      background-color: #005999 !important;
-    }
-  `;
-
-  const styleSheet = document.createElement("style");
-  styleSheet.type = "text/css";
-  styleSheet.innerText = lightModeStyles;
-  document.head.appendChild(styleSheet);
-
-  // 2. Smooth scroll for internal anchor links (optional, since you have scroll-behavior smooth, this is a fallback)
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  // 3. Highlight current section in nav (create nav dynamically)
-  const sections = document.querySelectorAll('section');
-  const nav = document.createElement('nav');
-  nav.style.position = 'fixed';
-  nav.style.top = '100px';
-  nav.style.right = '30px';
-  nav.style.background = 'rgba(0,0,0,0.3)';
-  nav.style.borderRadius = '8px';
-  nav.style.padding = '10px';
-  nav.style.zIndex = '1001';
-  nav.style.fontWeight = '700';
-  nav.style.fontSize = '0.9rem';
-  nav.style.color = '#00f7ff';
-
-  sections.forEach(section => {
-    const link = document.createElement('a');
-    link.textContent = section.querySelector('h2').textContent;
-    link.href = `#${section.id}`;
-    link.style.display = 'block';
-    link.style.marginBottom = '8px';
-    link.style.color = 'inherit';
-    link.style.textDecoration = 'none';
-    nav.appendChild(link);
-  });
-  document.body.appendChild(nav);
-
-  // Highlight current section link on scroll
-  window.addEventListener('scroll', () => {
-    const scrollPos = window.scrollY + window.innerHeight / 2;
-    sections.forEach(section => {
-      const link = nav.querySelector(`a[href="#${section.id}"]`);
-      if (!link) return;
-      const offsetTop = section.offsetTop;
-      const offsetBottom = offsetTop + section.offsetHeight;
-      if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
-        link.style.color = '#ffae00';
+  <script>
+    // 1. Dark mode toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      if (document.body.classList.contains('light-mode')) {
+        darkModeToggle.textContent = 'Dark Mode';
       } else {
-        link.style.color = '#00f7ff';
+        darkModeToggle.textContent = 'Light Mode';
       }
     });
-  });
 
-  // 4. Keyboard shortcut: Press "T" to scroll to top
-  window.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 't') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  });
+    // 2. Smooth scroll for internal anchor links (optional, since you have scroll-behavior smooth, this is a fallback)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
 
-  // 5. Tooltip on project images showing project name (alt attribute is used as tooltip)
-  const projectCards = document.querySelectorAll('#projects .project-card');
-  projectCards.forEach(card => {
-    const img = card.querySelector('img');
-    const title = card.querySelector('h3').textContent;
-    img.title = title;  // native tooltip on hover
-  });
-</script>
+    // 3. Highlight current section in nav (create nav dynamically)
+    const sections = document.querySelectorAll('.section'); // Fixed selector to match .section class
+    const nav = document.createElement('nav');
+    nav.style.position = 'fixed';
+    nav.style.top = '100px';
+    nav.style.right = '30px';
+    nav.style.background = 'rgba(0,0,0,0.3)';
+    nav.style.borderRadius = '8px';
+    nav.style.padding = '10px';
+    nav.style.zIndex = '1001';
+    nav.style.fontWeight = '700';
+    nav.style.fontSize = '0.9rem';
+    nav.style.color = '#00f7ff';
+
+    sections.forEach(section => {
+      const h2 = section.querySelector('h2');
+      if (!h2) return;
+      const link = document.createElement('a');
+      link.textContent = h2.textContent;
+      link.href = `#${section.id}`;
+      link.style.display = 'block';
+      link.style.marginBottom = '8px';
+      link.style.color = 'inherit';
+      link.style.textDecoration = 'none';
+      nav.appendChild(link);
+    });
+    document.body.appendChild(nav);
+
+    // Highlight current section link on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.scrollY + window.innerHeight / 2;
+      sections.forEach(section => {
+        const link = nav.querySelector(`a[href="#${section.id}"]`);
+        if (!link) return;
+        const offsetTop = section.offsetTop;
+        const offsetBottom = offsetTop + section.offsetHeight;
+        if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+          link.style.color = '#ffae00';
+        } else {
+          link.style.color = '#00f7ff';
+        }
+      });
+    });
+
+    // 4. Keyboard shortcut: Press "T" to scroll to top
+    window.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 't') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    // 5. Removed tooltip script for project images, as there are no images in project cards
+  </script>
 
 </body>
 </html>
